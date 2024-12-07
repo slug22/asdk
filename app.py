@@ -24,12 +24,16 @@ GETIMG_API_KEY = os.getenv("GETIMG_API_KEY")
 MONGO_URI = os.getenv("MONGO_URI")
 app = FastAPI()
 
+# Update CORS middleware with more specific configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",  # React dev server
+        "https://vonne-penis-slug22-simonmnns-projects.vercel.app/"  # Add your actual frontend domain
+    ],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"]
 )
 
 # Constants
