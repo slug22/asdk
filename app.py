@@ -8,7 +8,7 @@ import uuid
 from datetime import datetime
 import json
 import base64
-import openai
+
 import os
 import httpx
 
